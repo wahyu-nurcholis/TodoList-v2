@@ -35,7 +35,6 @@ const TodoPage = () => {
   return (
     <MainLayout>
       <Navbar onLogout={logout} />
-
       <div className="mt-6 bg-white dark:bg-gray-800 p-4 rounded-md shadow">
         <h2 className="text-xl font-semibold mb-3">My Todos</h2>
         <TodoForm onAdd={add} editItem={editItem} onUpdate={update} onCancel={cancelEdit} />

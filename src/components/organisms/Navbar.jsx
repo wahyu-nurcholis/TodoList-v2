@@ -1,19 +1,19 @@
-import React, { useContext } from "react";
-import { DarkModeContext } from "../../context/DarkModeContext";
 import Button from "../atoms/Button";
 import { LuLogOut } from "react-icons/lu";
+import { GoMoon, GoSun } from "react-icons/go";
+import { useContext } from "react";
+import { DarkMode } from "../../context/DarkModeContext";
 
 const Navbar = ({ onLogout }) => {
-  const { dark, setDark } = useContext(DarkModeContext);
-
+  const { isDarkMode, setIsDarkMode } = useContext(DarkMode);
   return (
     <nav className="flex items-center justify-between p-4 border-b dark:border-gray-700">
       <h1 className="text-lg font-bold">Todo App</h1>
       <div className="flex items-center gap-2">
-        <Button onClick={() => setDark(!dark)} className="bg-gray-200 dark:bg-gray-700">
-          {dark ? "Light" : "Dark"}
+        <Button className="px-10 mx-10 rounded-2xl" onClick={() => setIsDarkMode(!isDarkMode)}>
+          {isDarkMode ? <GoSun /> : <GoMoon />}
         </Button>
-        <Button onClick={onLogout} className="text-white flex items-center gap-2 text-sm">
+        <Button onClick={onLogout} className="flex items-center gap-2 text-sm">
           logout <LuLogOut />
         </Button>
       </div>
