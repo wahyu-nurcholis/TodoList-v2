@@ -18,7 +18,7 @@ const LoginPage = () => {
 
   return (
     <AuthLayout>
-      <h2 className="text-2xl font-bold mb-4 ">Login</h2>
+      <h2 className="text-2xl font-bold mb-4 ">My Todo List</h2>
       <LoginForm onLogin={handleLogin} />
       {Loginfailed && <p className="text-red-600 text-sm text-center">{Loginfailed}</p>}
       <p className="mt-4 text-sm text-center text-gray-500">
